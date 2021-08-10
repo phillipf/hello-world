@@ -20,7 +20,7 @@ steps:
     when: ['-']
     # login with the identity of the task
     # run concurrently while the image is building: when: [-] indicates, wait for nothing
-    cmd: az login --identity > /dev/null
+    cmd: az acr login --identity > /dev/null
   - id: deploy-aci
     when: ['az-login', 'push-images']
     # When using - in a go template named element under . notation, the format of {{index .Object "name-pair"}} must be used
